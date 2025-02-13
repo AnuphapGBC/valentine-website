@@ -6,16 +6,16 @@ let timerText = document.getElementById("timer");
 
 let yesSize = 20; // Initial font size for Yes button
 let noClickCount = 0; // Counter for "No" button clicks
-let countdown = 30;
+let countdown = 10;
 
 // Function to Create Floating Hearts
 function createHeart() {
     let heart = document.createElement("div");
     heart.innerText = "❤️";
     heart.style.position = "absolute";
-    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.left = Math.random() * 90 + "vw"; // Adjusted for mobile
     heart.style.top = "100vh";
-    heart.style.fontSize = Math.random() * 30 + 20 + "px";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
     heart.style.animation = "floatUp 2s linear";
     
     document.body.appendChild(heart);
@@ -27,9 +27,9 @@ function createConfetti() {
     let confetti = document.createElement("div");
     confetti.innerText = "🎊";
     confetti.style.position = "absolute";
-    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.left = Math.random() * 90 + "vw"; // Adjusted for mobile
     confetti.style.top = "-10vh";
-    confetti.style.fontSize = Math.random() * 30 + 20 + "px";
+    confetti.style.fontSize = Math.random() * 20 + 20 + "px";
     confetti.style.animation = "fallDown 2s linear";
     
     document.body.appendChild(confetti);
@@ -70,10 +70,11 @@ noButton.addEventListener("click", function() {
     }
 });
 
-// "NO" Button Moves Away When Hovered
+// "NO" Button Moves Away When Hovered (Mobile-Safe)
 noButton.addEventListener("mouseover", function() {
-    let randomX = Math.floor(Math.random() * window.innerWidth - 100);
-    let randomY = Math.floor(Math.random() * window.innerHeight - 50);
+    let randomX = Math.max(0, Math.min(window.innerWidth - 100, Math.random() * window.innerWidth - 50));
+    let randomY = Math.max(0, Math.min(window.innerHeight - 50, Math.random() * window.innerHeight - 50));
+
     noButton.style.position = "absolute";
     noButton.style.left = randomX + "px";
     noButton.style.top = randomY + "px";

@@ -7,15 +7,18 @@ body {
 }
 
 .container {
-    margin-top: 100px;
+    margin-top: 50px;
+    padding: 10px;
 }
 
 h1 {
     color: #c2185b;
+    font-size: 24px;
 }
 
 h2 {
     color: #d81b60;
+    font-size: 20px;
 }
 
 p {
@@ -27,15 +30,15 @@ p {
     margin-top: 20px;
 }
 
-/* Button Styling */
+/* Make buttons larger for mobile */
 button {
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 24px;
+    padding: 15px 25px;
     margin: 10px;
     background-color: #c2185b;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -52,7 +55,8 @@ button:hover {
 /* Hide GIF by default & Center it */
 #celebrationGif {
     display: none;
-    width: 300px;
+    width: 80%;
+    max-width: 300px;
     margin-top: 20px;
     display: block;
     margin-left: auto;
@@ -73,6 +77,26 @@ button:hover {
 
 /* "YES" Button Gets Bigger on Hover */
 #yesButton:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
     transition: 0.3s;
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+    
+    h2 {
+        font-size: 18px;
+    }
+    
+    button {
+        font-size: 20px;
+        padding: 12px 20px;
+    }
+    
+    #yesButton:hover {
+        transform: scale(1.1);
+    }
 }
