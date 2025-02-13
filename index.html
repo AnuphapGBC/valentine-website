@@ -7,29 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Valentine's Day, My Love! ❤️</h1>
-        <p>I have a question for you...</p>
-        <h2>Will you be my Valentine?</h2>
 
-        <div class="buttons">
-            <button id="yesButton">Yes! 💖</button>
-            <button id="noButton">No... 💔</button>
+    <!-- Name Input Screen -->
+    <div id="nameInputScreen">
+        <h1>Welcome! 💕</h1>
+        <p>Enter your name to continue:</p>
+        <input type="text" id="nameInput" placeholder="Your Name">
+        <button id="startButton">Start</button>
+    </div>
+
+    <!-- Main Valentine Content (Initially Hidden) -->
+    <div id="mainContent" style="display: none;">
+        <div class="container">
+            <h1 id="valentineMessage">Happy Valentine's Day, My Love! ❤️</h1>
+            <p>I have a question for you...</p>
+            <h2>Will you be my Valentine?</h2>
+
+            <div class="buttons">
+                <button id="yesButton">Yes! 💖</button>
+                <button id="noButton">No... 💔</button>
+            </div>
+
+            <div id="response"></div>
+
+            <!-- Celebration GIF (Hidden initially) -->
+            <img id="celebrationGif" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGV2N2lhc3cxOWI3engxMnRzNXJxa3NmdXlzYnV3ZmVjYmM0c2phOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fP54DyXUV1UzLqcGRD/giphy.gif" alt="Celebration" />
+
+            <!-- Graduation Song Audio -->
+            <audio id="celebrationAudio">
+                <source src="pomp-and-circumstance.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <!-- Countdown Timer -->
+            <p id="timer">Time left: 30 seconds</p>
         </div>
-
-        <div id="response"></div>
-
-        <!-- Celebration GIF (Hidden initially) -->
-        <img id="celebrationGif" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGV2N2lhc3cxOWI3engxMnRzNXJxa3NmdXlzYnV3ZmVjYmM0c2phOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fP54DyXUV1UzLqcGRD/giphy.gif" alt="Celebration" />
-
-        <!-- Graduation Song Audio -->
-        <audio id="celebrationAudio">
-            <source src="pomp-and-circumstance.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-
-        <!-- Countdown Timer -->
-        <p id="timer">Time left: 10 seconds</p>
     </div>
 
     <script src="script.js"></script>

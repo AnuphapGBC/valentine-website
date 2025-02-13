@@ -30,7 +30,6 @@ p {
     margin-top: 20px;
 }
 
-/* Make buttons larger for mobile */
 button {
     font-size: 24px;
     padding: 15px 25px;
@@ -63,22 +62,39 @@ button:hover {
     margin-right: auto;
 }
 
-/* Heart Explosion Animation */
-@keyframes floatUp {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-100vh); opacity: 0; }
+/* Name Input Screen */
+#nameInputScreen {
+    text-align: center;
+    margin-top: 100px;
 }
 
-/* Confetti Animation */
-@keyframes fallDown {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
+#nameInput {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid #c2185b;
 }
 
-/* "YES" Button Gets Bigger on Hover */
-#yesButton:hover {
-    transform: scale(1.2);
-    transition: 0.3s;
+#startButton {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #c2185b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#startButton:hover {
+    background-color: #d81b60;
+}
+
+#timer {
+    font-size: 22px;
+    font-weight: bold;
+    color: red;
 }
 
 /* Mobile Responsive Fixes */
