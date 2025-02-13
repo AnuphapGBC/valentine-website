@@ -14,7 +14,7 @@ let yesSize = 20;
 let noClickCount = 0;
 let countdown = 30;
 let timer;
-let soundPlayed = false; // Prevent sound from playing multiple times
+let soundPlayed = false; // Prevent sound from playing too often
 
 // Handle Name Input and Show Website
 startButton.addEventListener("click", function() {
@@ -52,7 +52,7 @@ yesButton.addEventListener("click", function() {
     clearInterval(timer);
 });
 
-// "NO" Button Click Action
+// "NO" Button Click Action (Mobile & Desktop Compatible)
 noButton.addEventListener("click", function() {
     noClickCount++;
     yesSize += 20;
@@ -69,20 +69,38 @@ noButton.addEventListener("click", function() {
         noButton.style.display = "none";
         document.getElementById("response").innerText = "Oops! The 'No' button disappeared! Guess you have to say YES! 😆💖";
     }
+
+    // Play Nope Sound when tapped on mobile
+    playNopeSound();
 });
 
-// "NO" Button Moves Away When Hovered + Plays Nope Sound
+// "NO" Button Moves Away When Hovered (Desktop) & Plays Sound
 noButton.addEventListener("mouseover", function() {
+    if (!isMobileDevice()) {
+        moveNoButton();
+        playNopeSound();
+    }
+});
+
+// Function to Move "No" Button (Desktop Only)
+function moveNoButton() {
     let randomX = Math.random() * window.innerWidth * 0.8;
     let randomY = Math.random() * window.innerHeight * 0.8;
     noButton.style.position = "absolute";
     noButton.style.left = randomX + "px";
     noButton.style.top = randomY + "px";
+}
 
-    // Play Nope Sound (Only if it hasn't played recently)
+// Function to Play Nope Sound (Desktop & Mobile)
+function playNopeSound() {
     if (!soundPlayed) {
         nopeSound.play();
         soundPlayed = true;
-        setTimeout(() => { soundPlayed = false; }, 500); // Prevent spamming
+        setTimeout(() => { soundPlayed = false; }, 500); // Prevent sound spam
     }
-});
+}
+
+// Function to Detect Mobile Device
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
