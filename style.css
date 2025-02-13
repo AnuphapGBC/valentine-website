@@ -1,0 +1,78 @@
+body {
+    background-color: #ffe6e6;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+h1 {
+    color: #c2185b;
+}
+
+h2 {
+    color: #d81b60;
+}
+
+p {
+    font-size: 18px;
+    color: #5e5e5e;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+/* Button Styling */
+button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #c2185b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #d81b60;
+}
+
+/* Growing "Yes" Button */
+#yesButton {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Hide GIF by default & Center it */
+#celebrationGif {
+    display: none;
+    width: 300px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Heart Explosion Animation */
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Confetti Animation */
+@keyframes fallDown {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* "YES" Button Gets Bigger on Hover */
+#yesButton:hover {
+    transform: scale(1.5);
+    transition: 0.3s;
+}
