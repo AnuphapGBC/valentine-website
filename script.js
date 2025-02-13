@@ -6,7 +6,7 @@ let timerText = document.getElementById("timer");
 
 let yesSize = 20; // Initial font size for Yes button
 let noClickCount = 0; // Counter for "No" button clicks
-let countdown = 10;
+let countdown = 30;
 
 // Function to Create Floating Hearts
 function createHeart() {
