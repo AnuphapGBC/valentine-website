@@ -2,6 +2,7 @@ let yesButton = document.getElementById("yesButton");
 let noButton = document.getElementById("noButton");
 let celebrationGif = document.getElementById("celebrationGif");
 let celebrationAudio = document.getElementById("celebrationAudio");
+let nopeSound = document.getElementById("nopeSound");
 let timerText = document.getElementById("timer");
 let nameInputScreen = document.getElementById("nameInputScreen");
 let mainContent = document.getElementById("mainContent");
@@ -13,6 +14,7 @@ let yesSize = 20;
 let noClickCount = 0;
 let countdown = 30;
 let timer;
+let soundPlayed = false; // Prevent sound from playing multiple times
 
 // Handle Name Input and Show Website
 startButton.addEventListener("click", function() {
@@ -69,11 +71,18 @@ noButton.addEventListener("click", function() {
     }
 });
 
-// "NO" Button Moves Away When Hovered (Mobile-Safe)
+// "NO" Button Moves Away When Hovered + Plays Nope Sound
 noButton.addEventListener("mouseover", function() {
     let randomX = Math.random() * window.innerWidth * 0.8;
     let randomY = Math.random() * window.innerHeight * 0.8;
     noButton.style.position = "absolute";
     noButton.style.left = randomX + "px";
     noButton.style.top = randomY + "px";
+
+    // Play Nope Sound (Only if it hasn't played recently)
+    if (!soundPlayed) {
+        nopeSound.play();
+        soundPlayed = true;
+        setTimeout(() => { soundPlayed = false; }, 500); // Prevent spamming
+    }
 });
